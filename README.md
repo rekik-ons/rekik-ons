@@ -1,78 +1,53 @@
-<!-- Bannière animée -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=230&section=header&text=Ons%20Rekik&fontSize=60&fontAlignY=38&animation=fadeIn&desc=Étudiante%20en%20Génie%20Logiciel%20%C2%B7%20Full-Stack%20%C2%B7%20Mobile%20%C2%B7%20IA&descAlignY=60&descSize=18" width="100%" alt="banner"/>
+<!-- Bannière lune animée (fichier assets/moon-banner.svg) -->
+<img src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/main/assets/moon-banner.svg" width="100%" alt="Ons Rekik"/>
 
 <!-- Texte qui s'écrit tout seul -->
 <div align="center">
   <a href="https://github.com/rekik-ons">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3000&pause=900&color=A78BFA&center=true&vCenter=true&width=700&lines=Étudiante+en+Génie+Logiciel+%26+Systèmes+d'Information+%F0%9F%8E%93;Développement+Full-Stack%2C+mobile+%26+IA+%F0%9F%9A%80;Computer+Vision+%C2%B7+Machine+Learning+%C2%B7+BI+%F0%9F%A7%A0;Ouverte+aux+opportunités+%3A+Stage+PFE+%C2%B7+Freelance+%F0%9F%A4%9D;La+curiosité+est+mon+moteur+%E2%88%9E" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=21&duration=3000&pause=900&color=C4B5FD&center=true&vCenter=true&width=700&lines=Étudiante+en+Génie+Logiciel+%26+Systèmes+d'Information+%F0%9F%8E%93;Full-Stack+%C2%B7+Mobile+%C2%B7+Intelligence+Artificielle+%F0%9F%9A%80;Computer+Vision+%C2%B7+Machine+Learning+%C2%B7+BI+%F0%9F%A7%A0;Ouverte+aux+opportunités+%3A+Stage+PFE+%C2%B7+Freelance+%F0%9F%8C%99" alt="Typing SVG" />
   </a>
 </div>
 
 <br/>
 
+<!-- Compteurs : dépôts publics (mis à jour automatiquement), followers, visites -->
 <div align="center">
-  <img src="https://komarev.com/ghpvc/?username=rekik-ons&label=Visites&color=7c3aed&style=flat" alt="compteur de visites" />
-  <a href="https://github.com/rekik-ons?tab=followers"><img src="https://img.shields.io/github/followers/rekik-ons?style=social" alt="followers"/></a>
-  <br/><br/>
-  <a href="https://TON-LIEN-PORTFOLIO"><img src="https://img.shields.io/badge/🌙%20Mon%20Portfolio-7c3aed?style=for-the-badge&logoColor=white" alt="Portfolio"/></a>
-  <a href="https://www.linkedin.com/in/rekik-ons"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:onsrekik9@gmail.com"><img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Frekik-ons&query=%24.public_repos&label=D%C3%A9p%C3%B4ts%20publics&labelColor=0b0f1f&color=7c3aed&style=for-the-badge&logo=github&logoColor=white" alt="compteur de dépôts" />
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fapi.github.com%2Fusers%2Frekik-ons&query=%24.followers&label=Followers&labelColor=0b0f1f&color=6d28d9&style=for-the-badge&logo=github&logoColor=white" alt="followers" />
+  <img src="https://komarev.com/ghpvc/?username=rekik-ons&label=Visites&color=4c1d95&labelColor=0b0f1f&style=for-the-badge" alt="visites" />
 </div>
 
 ---
 
-## 👩‍💻 À propos de moi
+## 🌙 En quelques mots
 
-Étudiante en **Génie Logiciel et Systèmes d'Information** à l'**ISTIC** (Borj Cédria, Tunis), orientée **développement Full-Stack, mobile et intelligence artificielle**. J'aime concevoir des applications, des API REST et des solutions intelligentes qui répondent à de vrais besoins.
-
-- 📍 Tunis, Tunisie · Remote / Présentiel
-- 🔭 Actuellement : **analyse cinématique des mouvements humains par Computer Vision**
-- 🎯 À la recherche de : **Stage PFE** · **Freelance** · **Contribution à des projets**
-- 🧪 Notions de tests logiciels (**ISTQB Foundation Level**) et méthodes **Agile Scrum**
-- 💬 Parle-moi de : **IA, Data Science, Business Intelligence, Full-Stack**
-
-<details>
-<summary>🎓 <b>Parcours</b></summary>
-
-| Période | Parcours |
-|---|---|
-| Juil. — Août 2026 | **Stage Développeuse Full-Stack & IA** · Taysir Microfinance : assistant conversationnel de qualification des prospects |
-| Sept. 2024 — Présent | **Licence en Génie Logiciel et Systèmes d'Information** · ISTIC, Borj Cédria |
-| Juin 2023 | **Baccalauréat Informatique** |
-
-</details>
-
-<details>
-<summary>🏅 <b>Certifications & langues</b></summary>
-
-- **AI Fundamentals : les bases pour comprendre l'IA** · Cisco Networking Academy (Août 2026)
-- **Management de projet : Option Agile Scrum** · 4C-ISTIC (Février 2026)
-- 🌍 Arabe (langue maternelle) · Français (très bon niveau) · Anglais (bon niveau)
-
-</details>
+> Étudiante en **Génie Logiciel et Systèmes d'Information** (ISTIC, Tunis), je transforme la curiosité en applications : **Full-Stack, mobile et IA**.
+> Du chatbot de qualification de prospects à la détection de comportements anormaux par **Computer Vision**, j'aime construire des solutions intelligentes qui servent à quelque chose.
+>
+> 🔭 En ce moment : analyse cinématique des mouvements humains · 🎯 Je cherche : **Stage PFE** · **Freelance** · **Contributions**
 
 ---
 
-## 🛠️ Mes compétences
+## 🛠️ Skills
 
 <div align="center">
 
 **Développement**
 
-<img src="https://skillicons.dev/icons?i=py,java,js,html,css,react,angular,fastapi,bootstrap,flutter&perline=10" alt="développement" />
+<img src="https://skillicons.dev/icons?i=py,java,js,html,css,react,angular,fastapi,bootstrap,flutter&perline=10&theme=dark" alt="développement" />
 
 **IA & Data**
 
-<img src="https://skillicons.dev/icons?i=tensorflow,pytorch,opencv,pandas,numpy,powerbi&perline=6" alt="ia et data" />
+<img src="https://skillicons.dev/icons?i=tensorflow,pytorch,opencv,pandas,numpy,powerbi&perline=6&theme=dark" alt="ia et data" />
 
 **Bases de données, Cloud & outils**
 
-<img src="https://skillicons.dev/icons?i=mysql,sqlite,docker,git,github,linux,vscode,eclipse,postman&perline=9" alt="outils" />
+<img src="https://skillicons.dev/icons?i=mysql,sqlite,docker,git,github,linux,vscode,eclipse,postman&perline=9&theme=dark" alt="outils" />
 
 </div>
 
 <details>
-<summary>📚 <b>Arborescence technique complète</b></summary>
+<summary>📚 <b>Liste complète des compétences</b></summary>
 
 - **Langages** : Python, Java, JavaScript, SQL, PL/SQL, HTML5, CSS3
 - **Web** : React, Angular, FastAPI, Java EE, Bootstrap, API REST
@@ -89,53 +64,30 @@
 
 ---
 
-## 🚀 Projets
-
-| Projet | Description | Technos |
-|---|---|---|
-| 👁️ [**Analyse cinématique des mouvements humains par Computer Vision**](https://github.com/rekik-ons/human-motion-cv) | Surveillance vidéo intelligente : détection de comportements anormaux dans les zones restreintes via les *Human Pose Landmarks*, sans reconnaissance faciale (respect de la vie privée). | `Python` `OpenCV` `MediaPipe` `TensorFlow` `PyTorch` |
-| 💬 [**Assistant conversationnel · Taysir Microfinance**](https://github.com/rekik-ons/taysir-chatbot) | Qualification de prospects : parcours conversationnel, scoring, règles d'éligibilité, API REST et interface React. | `FastAPI` `React` `Rasa` `Qwen3` `SQLite` |
-| 🩺 [**Application web de gestion médicale**](https://github.com/rekik-ons/medical-management-app) | Deux versions : Angular/FastAPI (API REST, CRUD) et Java EE (MVC, Servlets, JSP, EJB, JPA, Oracle). | `Angular` `FastAPI` `Java EE` `Oracle` |
-| 📊 [**BI & Data Warehouse · Analyse des ventes**](https://github.com/rekik-ons/bi-sales-analysis) | Data Mart en étoile, ETL Pentaho, rapports OLAP et tableau de bord Power BI. | `Pentaho` `Power BI` `OLAP` `MySQL` |
-| 🌌 [**Portfolio personnel**](https://github.com/rekik-ons/portfolio) | Portfolio interactif bilingue (FR/EN) avec mode jour/nuit. | `React` `Vite` `CSS` |
-
----
-
-## 📊 Statistiques GitHub
+## 📊 Statistiques
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=rekik-ons&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" alt="stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rekik-ons&layout=compact&theme=tokyonight&hide_border=true" alt="langages" />
+  <img height="175" src="https://github-readme-stats.vercel.app/api?username=rekik-ons&show_icons=true&hide_border=true&count_private=true&bg_color=0b0f1f&title_color=C4B5FD&text_color=C9D1D9&icon_color=A78BFA&ring_color=7C3AED" alt="stats" />
+  <img height="175" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rekik-ons&layout=compact&hide_border=true&bg_color=0b0f1f&title_color=C4B5FD&text_color=C9D1D9" alt="langages" />
   <br/>
-  <img src="https://streak-stats.demolab.com/?user=rekik-ons&theme=tokyonight&hide_border=true" alt="streak" />
+  <img src="https://streak-stats.demolab.com/?user=rekik-ons&hide_border=true&background=0B0F1F&ring=A78BFA&fire=FBBF24&currStreakNum=FFFFFF&currStreakLabel=E9D5FF&sideNums=FFFFFF&sideLabels=C9D1D9&dates=8B8FB8" alt="streak" />
 </div>
+
+---
 
 ## 📈 Activité
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rekik-ons&theme=tokyo-night&hide_border=true&area=true" alt="graphique d'activité" />
-</div>
-
-## 🐍 Contributions
-
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg" />
-    <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg" />
-  </picture>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rekik-ons&bg_color=0b0f1f&color=C4B5FD&line=A78BFA&point=FFFFFF&area_color=7C3AED&area=true&hide_border=true" alt="graphique d'activité" />
 </div>
 
 ---
 
-## 🤝 Collaborons
-
-Un stage PFE, un projet intéressant, une discussion tech ? J'aimerais beaucoup échanger des idées avec toi.
+## 🐍 Contributions
 
 <div align="center">
-  <a href="https://TON-LIEN-PORTFOLIO"><img src="https://img.shields.io/badge/Portfolio-7c3aed?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/></a>
-  <a href="https://www.linkedin.com/in/rekik-ons"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-  <a href="mailto:onsrekik9@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+  <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake-dark.svg" />
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,24&height=120&section=footer&text=∞%20La%20curiosité%20est%20mon%20moteur&fontSize=18&fontAlignY=70" width="100%" alt="footer"/>
+<!-- Pied de page lune animé (fichier assets/moon-footer.svg) -->
+<img src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/main/assets/moon-footer.svg" width="100%" alt="footer"/>
