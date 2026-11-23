@@ -17,7 +17,7 @@
 <div align="center">
   <a href="https://www.linkedin.com/in/rekik-ons"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/></a>
   <a href="mailto:onsrekik9@gmail.com"><img src="https://img.shields.io/badge/Email-0d1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/></a>
-  <a href="https://github.com/rekik-ons"><img src="https://img.shields.io/badge/GitHub-0d1117?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+  <a href="https://ons-rekik-portfolio-tau.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0d1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
 </div>
 
 <br/>
@@ -26,8 +26,7 @@
 
 ```ts
 const onsRekik = {
-  role: "Software Engineering & Information Systems student",
-  school: "ISTIC · Borj Cédria, Tunis",
+  role: "Dev Full-Stack · Mobile · IA & Data",
   focus: ["Full-Stack", "Mobile", "Artificial Intelligence"],
   interests: [
     "AI & Data Science",
@@ -35,7 +34,6 @@ const onsRekik = {
     "Computer Vision",
     "Business Intelligence"
   ],
-  languages: ["Arabic", "French", "English"],
   mindset: "Always curious",
   status: "Open to opportunities"
 };
@@ -141,6 +139,7 @@ export default onsRekik;
   <br/><br/>
   <a href="mailto:onsrekik9@gmail.com"><img src="https://img.shields.io/badge/Send_a_message-0d1117?style=for-the-badge&logo=gmail&logoColor=EA4335" alt="Email"/></a>
   <a href="https://www.linkedin.com/in/rekik-ons"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/></a>
+  <a href="https://ons-rekik-portfolio-tau.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-0d1117?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"/></a>
 </div>
 
 <img src="./assets/moon-footer.svg" width="100%" alt="footer"/>
