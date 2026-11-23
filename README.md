@@ -1,5 +1,5 @@
 <!-- Bannière lune animée (fichier assets/moon-banner.svg) -->
-<img src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/main/assets/moon-banner.svg" width="100%" alt="Ons Rekik"/>
+<img src="./assets/moon-banner.svg" width="100%" alt="Ons Rekik"/>
 
 <!-- Texte qui s'écrit tout seul -->
 <div align="center">
@@ -86,8 +86,8 @@
 ## 🐍 Contributions
 
 <div align="center">
-  <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake-dark.svg" />
+  <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg" />
 </div>
 
 <!-- Pied de page lune animé (fichier assets/moon-footer.svg) -->
-<img src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/main/assets/moon-footer.svg" width="100%" alt="footer"/>
+<img src="./assets/moon-footer.svg" width="100%" alt="footer"/>
