@@ -1,5 +1,5 @@
-<!-- Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1e1b4b,100:0e75b6&height=230&section=header&text=Ons%20Rekik&fontSize=60&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=Full-Stack%20%C2%B7%20Mobile%20%C2%B7%20AI&descAlignY=58&descSize=20&descColor=36BCF7" width="100%" alt="banner"/>
+<!-- Banner (moon) -->
+<img src="./assets/moon-banner.svg" width="100%" alt="Ons Rekik banner"/>
 
 <!-- Self-hosted typing animation (file: assets/typing.svg) -->
 <div align="center">
@@ -131,11 +131,7 @@ export default onsRekik;
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Contributions&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Contributions"/>
 
 <div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake-dark.svg" />
-    <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake-dark.svg" />
-  </picture>
+  <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg" />
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Let%27s%20talk&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Let's talk"/>
@@ -147,4 +143,4 @@ export default onsRekik;
   <a href="https://www.linkedin.com/in/rekik-ons"><img src="https://img.shields.io/badge/LinkedIn-0d1117?style=for-the-badge&logo=linkedin&logoColor=0A66C2" alt="LinkedIn"/></a>
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1e1b4b,100:0e75b6&height=120&section=footer&text=Curiosity%20is%20my%20driving%20force%20%E2%88%9E&fontSize=22&fontColor=ffffff&fontAlignY=70" width="100%" alt="footer"/>
+<img src="./assets/moon-footer.svg" width="100%" alt="footer"/>
