@@ -47,84 +47,6 @@ export default onsRekik;
 - 🌱 Deepening my knowledge of **Machine Learning, Deep Learning and LLMs**
 - 🎯 Looking for: **PFE internship · Freelance · Project contributions**
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Education&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Education"/>
-
-<table>
-  <tr>
-    <td width="28%" valign="top"><b>Sept. 2024 — Present</b><br/><sub>🟢 IN PROGRESS</sub></td>
-    <td valign="top"><b>Bachelor's Degree in Software Engineering & Information Systems</b><br/><sub>ISTIC · Borj Cédria, Tunis</sub><br/>Software development, databases, BI & data. Agile Scrum projects · Software testing fundamentals (ISTQB Foundation Level).</td>
-  </tr>
-  <tr>
-    <td width="28%" valign="top"><b>June 2023</b><br/><sub>FOUNDATION</sub></td>
-    <td valign="top"><b>High School Diploma in Computer Science</b></td>
-  </tr>
-</table>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Experience&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Experience"/>
-
-<table>
-  <tr>
-    <td width="28%" valign="top"><b>Full-Stack & AI Developer</b><br/><sub>Taysir Microfinance<br/>July — August 2026</sub></td>
-    <td valign="top">
-      Developed an <b>intelligent conversational assistant</b> dedicated to prospect qualification.
-      <ul>
-        <li>Backend design with Python, FastAPI, SQLAlchemy and SQLite</li>
-        <li>Conversational flow, scoring, qualification and eligibility rules</li>
-        <li>REST APIs, prospect and conversation management</li>
-        <li>React user interface</li>
-        <li>Functional testing with Swagger and Postman</li>
-      </ul>
-      <code>React</code> <code>FastAPI</code> <code>Rasa</code> <code>Qwen3</code> <code>SQLite</code> <code>Python</code>
-    </td>
-  </tr>
-</table>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Projects&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Projects"/>
-
-<table>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>👁️ <a href="https://github.com/rekik-ons/human-motion-cv">Kinematic Analysis & Restricted-Area Security</a></h3>
-      <sub><b>ACADEMIC · TEAM · Oct. 2026 — present</b></sub>
-      <p>Intelligent video surveillance: analyzes human movement and detects abnormal behavior in restricted areas while preserving privacy, using <i>Human Pose Landmarks</i> instead of facial recognition.</p>
-      <p><code>Python</code> <code>OpenCV</code> <code>MediaPipe</code> <code>TensorFlow</code> <code>PyTorch</code> <code>Colab</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>💬 <a href="https://github.com/rekik-ons/taysir-chatbot">Conversational Assistant — Taysir Microfinance</a></h3>
-      <sub><b>PROFESSIONAL · July — Aug. 2026</b></sub>
-      <p>Prospect qualification assistant: conversational flow, scoring, eligibility rules, REST APIs and React interface.</p>
-      <p><code>Python</code> <code>FastAPI</code> <code>React</code> <code>Rasa</code> <code>Qwen3</code> <code>SQLAlchemy</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>🩺 <a href="https://github.com/rekik-ons/medical-management-app">Medical Management Web App</a></h3>
-      <sub><b>ACADEMIC · TEAM · Feb. — May 2026</b></sub>
-      <p>Two versions: Angular/FastAPI (REST API, CRUD) and Java EE (MVC, Servlets, JSP, EJB, JPA, Oracle DB, Bootstrap).</p>
-      <p><code>Angular</code> <code>FastAPI</code> <code>Java EE</code> <code>JPA</code> <code>Oracle</code> <code>Bootstrap</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>📊 <a href="https://github.com/rekik-ons/bi-sales-analysis">BI & Data Warehouse — Sales Analysis</a></h3>
-      <sub><b>ACADEMIC · Apr. 2026</b></sub>
-      <p>Star-schema Data Mart, ETL process with Pentaho, OLAP reports and Power BI dashboard.</p>
-      <p><code>Pentaho Kettle</code> <code>Power BI</code> <code>OLAP</code> <code>MySQL</code></p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%" valign="top">
-      <h3>✨ <a href="https://github.com/rekik-ons/portfolio">Personal Portfolio</a></h3>
-      <sub><b>PERSONAL · 2026</b></sub>
-      <p>Interactive portfolio with a day/night theme (moon & sun), bilingual FR/EN, live GitHub counters and a contact form.</p>
-      <p><code>React</code> <code>Vite</code> <code>CSS</code> <code>JavaScript</code></p>
-    </td>
-    <td width="50%" valign="top">
-      <h3>📂 <a href="https://github.com/rekik-ons?tab=repositories">All my repositories</a></h3>
-      <sub><b>AND MORE</b></sub>
-      <p>Browse everything else I build on GitHub.</p>
-    </td>
-  </tr>
-</table>
-
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Skills&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Skills"/>
 
 <div align="center">
@@ -187,17 +109,6 @@ export default onsRekik;
 <img src="https://img.shields.io/badge/Cloud_Computing-0d1117?style=flat-square" alt="Cloud"/>
 <img src="https://img.shields.io/badge/Virtualization-0d1117?style=flat-square" alt="Virtualization"/>
 
-</div>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Certifications%20%26%20Languages&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Certifications and Languages"/>
-
-- 🤖 **AI Fundamentals: Foundations for Understanding AI** — Cisco Networking Academy · August 2026
-- 📋 **Project Management: Agile Scrum Option** — 4C-ISTIC · February 2026
-
-<div align="center">
-  <img src="https://img.shields.io/badge/Arabic-Native-0d1117?style=for-the-badge&labelColor=0d1117&color=36BCF7" alt="Arabic"/>
-  <img src="https://img.shields.io/badge/French-Very_good-0d1117?style=for-the-badge&labelColor=0d1117&color=A78BFA" alt="French"/>
-  <img src="https://img.shields.io/badge/English-Good-0d1117?style=for-the-badge&labelColor=0d1117&color=F472B6" alt="English"/>
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=GitHub%20Statistics&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="GitHub Statistics"/>
