@@ -3,7 +3,7 @@
 
 <!-- Self-hosted typing animation (file: assets/typing.svg) -->
 <div align="center">
-  <img src="./assets/typing.svg" width="640" height="56" alt="Full-Stack · Mobile · AI Developer | Computer Vision & Data Science | Open to PFE internships & freelance | Curiosity is my driving force"/>
+  <img src="./assets/typing.svg" width="640" height="188" alt="Full-Stack · Mobile · AI Developer | Computer Vision & Data Science | Open to PFE internships & freelance | Curiosity is my driving force"/>
 </div>
 
 <div align="center">
