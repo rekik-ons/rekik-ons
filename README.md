@@ -113,7 +113,7 @@ export default onsRekik;
 
 <div align="center">
   <img height="220" src="https://github-readme-stats.vercel.app/api?username=rekik-ons&show_icons=true&bg_color=0d1117&hide_border=true&count_private=true&title_color=a8c0ff&text_color=d4d8f0&icon_color=ffb3c6&ring_color=a8e6cf" alt="stats" />
-  <img height="220" src="./assets/top-langs.svg" alt="top languages" />
+  <img height="220" src="https://ons-rekik-portfolio-tau.vercel.app/api/top-langs" alt="top languages" />
 </div>
 
 <div align="center">
