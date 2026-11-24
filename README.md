@@ -111,9 +111,11 @@ export default onsRekik;
 
 
 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=GitHub%20Statistics&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="GitHub Statistics"/>
+
 <div align="center">
   <img height="220" src="https://github-readme-stats.vercel.app/api?username=rekik-ons&show_icons=true&bg_color=0d1117&hide_border=true&count_private=true&title_color=a8c0ff&text_color=d4d8f0&icon_color=ffb3c6&ring_color=a8e6cf" alt="stats" />
-  <img height="220" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rekik-ons&layout=compact&langs_count=10&bg_color=0d1117&hide_border=true&title_color=a8c0ff&text_color=d4d8f0" alt="top languages" />
+  <img height="220" src="./assets/top-langs.svg" alt="top languages" />
 </div>
 
 <div align="center">
