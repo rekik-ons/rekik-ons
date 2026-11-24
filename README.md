@@ -109,11 +109,11 @@ export default onsRekik;
 
 </div>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rekik-ons&layout=compact&langs_count=10&theme=tokyonight&bg_color=0d1117&hide_border=true" alt="top languages" />
+
 
 <div align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=rekik-ons&show_icons=true&theme=tokyonight&bg_color=0d1117&hide_border=true&count_private=true" alt="stats" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rekik-ons&layout=compact&theme=tokyonight&bg_color=0d1117&hide_border=true" alt="top languages" />
+  <img height="220" src="https://github-readme-stats.vercel.app/api?username=rekik-ons&show_icons=true&theme=tokyonight&bg_color=0d1117&hide_border=true&count_private=true" alt="stats" />
+  <img height="220" src="https://github-readme-stats.vercel.app/api/top-langs/?username=rekik-ons&layout=compact&langs_count=10&theme=tokyonight&bg_color=0d1117&hide_border=true" alt="top languages" />
 </div>
 
 <div align="center">
