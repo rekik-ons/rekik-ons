@@ -1,7 +1,10 @@
 
 import fs from "node:fs";
 
-// GitHub configuration
+// ==========================================
+// 1. GITHUB CONFIGURATION
+// ==========================================
+
 const token = process.env.GH_TOKEN;
 const username = "rekik-ons";
 
@@ -9,7 +12,10 @@ if (!token) {
   throw new Error("GH_TOKEN is missing.");
 }
 
-// Fetch GitHub contribution calendar
+// ==========================================
+// 2. FETCH GITHUB CONTRIBUTIONS
+// ==========================================
+
 const query = `
 query {
   user(login: "${username}") {
@@ -52,12 +58,14 @@ if (!user) {
   throw new Error("GitHub user not found.");
 }
 
-// Get contribution data
+// ==========================================
+// 3. PREPARE DAILY CONTRIBUTION DATA
+// ==========================================
+
 const days = user.contributionsCollection
   .contributionCalendar.weeks
   .flatMap(week => week.contributionDays);
 
-// Current month
 const now = new Date();
 const year = now.getUTCFullYear();
 const month = now.getUTCMonth();
@@ -66,12 +74,10 @@ const dayCount = new Date(
   Date.UTC(year, month + 1, 0)
 ).getUTCDate();
 
-// Map contributions by date
 const contributionsByDate = new Map(
   days.map(day => [day.date, day.contributionCount])
 );
 
-// Create daily data
 const dailyData = Array.from({ length: dayCount }, (_, i) => {
   const date = new Date(Date.UTC(year, month, i + 1))
     .toISOString()
@@ -83,7 +89,10 @@ const dailyData = Array.from({ length: dayCount }, (_, i) => {
   };
 });
 
-// SVG dimensions
+// ==========================================
+// 4. SVG DIMENSIONS
+// ==========================================
+
 const width = 1200;
 const height = 460;
 
@@ -95,7 +104,10 @@ const bottom = 80;
 const chartWidth = width - left - right;
 const chartHeight = height - top - bottom;
 
-// Y-axis scale
+// ==========================================
+// 5. Y-AXIS SCALE
+// ==========================================
+
 const maxContributions = Math.max(
   5,
   ...dailyData.map(d => d.count)
@@ -108,7 +120,10 @@ const step = Math.max(
 
 const yMax = step * 5;
 
-// Calculate graph coordinates
+// ==========================================
+// 6. CALCULATE GRAPH POINTS
+// ==========================================
+
 const points = dailyData.map((d, i) => ({
   x: left + (i / Math.max(1, dayCount - 1)) * chartWidth,
   y: top + chartHeight - (d.count / yMax) * chartHeight,
@@ -116,15 +131,19 @@ const points = dailyData.map((d, i) => ({
   count: d.count
 }));
 
+// ==========================================
+// 7. MILLIMETER-PAPER GRID
+// ==========================================
 
-// Millimeter-paper grid (small squares)
 const horizontalGrid = [];
 
 const gridStepX = chartWidth / (dayCount - 1);
 const gridStepY = chartHeight / 20;
 
 // Vertical grid lines
-for (let x = left; x <= width - right + 0.1; x += gridStepX) {
+for (let i = 0; i < dayCount; i++) {
+  const x = left + i * gridStepX;
+
   horizontalGrid.push(`
     <line
       x1="${x}"
@@ -132,14 +151,16 @@ for (let x = left; x <= width - right + 0.1; x += gridStepX) {
       x2="${x}"
       y2="${top + chartHeight}"
       stroke="#39334f"
-      stroke-width="0.7"
-      opacity="0.55"
+      stroke-width="0.8"
+      opacity="0.65"
     />
   `);
 }
 
 // Horizontal grid lines
-for (let y = top; y <= top + chartHeight + 0.1; y += gridStepY) {
+for (let i = 0; i <= 20; i++) {
+  const y = top + i * gridStepY;
+
   horizontalGrid.push(`
     <line
       x1="${left}"
@@ -147,17 +168,22 @@ for (let y = top; y <= top + chartHeight + 0.1; y += gridStepY) {
       x2="${width - right}"
       y2="${y}"
       stroke="#39334f"
-      stroke-width="0.7"
-      opacity="0.55"
+      stroke-width="0.8"
+      opacity="0.65"
     />
   `);
 }
 
-// Y-axis labels
+// ==========================================
+// 8. Y-AXIS LABELS
+// ==========================================
+
+const yLabels = [];
+
 for (let value = 0; value <= yMax; value += step) {
   const y = top + chartHeight - (value / yMax) * chartHeight;
 
-  horizontalGrid.push(`
+  yLabels.push(`
     <text
       x="${left - 15}"
       y="${y + 4}"
@@ -168,7 +194,10 @@ for (let value = 0; value <= yMax; value += step) {
   `);
 }
 
-// All days on X-axis
+// ==========================================
+// 9. X-AXIS LABELS (ALL DAYS)
+// ==========================================
+
 const xLabels = points.map(point => `
   <text
     x="${point.x}"
@@ -179,7 +208,10 @@ const xLabels = points.map(point => `
   >${point.day}</text>
 `).join("");
 
-// Smooth rounded curve using cubic Bezier
+// ==========================================
+// 10. SMOOTH ROUNDED CURVE
+// ==========================================
+
 function createSmoothPath(points) {
   if (points.length < 2) return "";
 
@@ -211,7 +243,10 @@ function createSmoothPath(points) {
 
 const linePath = createSmoothPath(points);
 
-// Vertical projection lines
+// ==========================================
+// 11. VERTICAL PROJECTION LINES
+// ==========================================
+
 const projectionLines = points.map(point => `
   <line
     x1="${point.x}"
@@ -225,7 +260,10 @@ const projectionLines = points.map(point => `
   />
 `).join("");
 
-// Final SVG
+// ==========================================
+// 12. FINAL SVG
+// ==========================================
+
 const svg = `
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -255,8 +293,11 @@ const svg = `
     Ons' Contributions
   </text>
 
-  <!-- Horizontal grid -->
+  <!-- Millimeter grid -->
   ${horizontalGrid.join("")}
+
+  <!-- Y-axis numbers -->
+  ${yLabels.join("")}
 
   <!-- Vertical projection lines -->
   ${projectionLines}
@@ -300,7 +341,10 @@ const svg = `
 </svg>
 `;
 
-// Save SVG
+// ==========================================
+// 13. SAVE SVG
+// ==========================================
+
 fs.mkdirSync("assets", { recursive: true });
 
 fs.writeFileSync(
