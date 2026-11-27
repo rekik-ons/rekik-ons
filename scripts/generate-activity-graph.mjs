@@ -103,8 +103,8 @@ const maxContributions = Math.max(5, ...dailyData.map(d => d.count));
 const step = Math.max(1, Math.ceil(maxContributions / 5));
 const yMax = step * 5;
 
-// X positions span the full month, even if the month isn't over
-const xFor = dayIndex => left + (dayIndex / Math.max(1, dayCount - 1)) * chartWidth;
+// X axis runs from day 1 to today: the last day on the right is always today
+const xFor = dayIndex => left + (dayIndex / Math.max(1, today - 1)) * chartWidth;
 
 const points = dailyData.map((d, i) => ({
   x: xFor(i),
@@ -118,9 +118,9 @@ const grid = [];
 const yLabels = [];
 
 const gridStepY = chartHeight / 20;
-const gridStepX = chartWidth / Math.max(1, dayCount - 1);
+const gridStepX = chartWidth / Math.max(1, today - 1);
 
-for (let i = 0; i < dayCount; i++) {
+for (let i = 0; i < today; i++) {
   const x = left + i * gridStepX;
   grid.push(
     `<line x1="${x}" y1="${top}" x2="${x}" y2="${baseline}" stroke="#39334f" stroke-width="0.7" opacity="0.65"/>`
@@ -142,8 +142,8 @@ for (let value = 0; value <= yMax; value += step) {
   );
 }
 
-// X-axis labels: every day of the month
-const xLabels = Array.from({ length: dayCount }, (_, i) =>
+// X-axis labels: day 1 to today
+const xLabels = Array.from({ length: today }, (_, i) =>
   `<text x="${xFor(i)}" y="${height - bottom + 25}" fill="#c5bddb" font-size="12" text-anchor="middle">${i + 1}</text>`
 ).join("");
 
@@ -234,7 +234,7 @@ const svg = `
   >Number of Contributions</text>
 
   <text x="${left + chartWidth / 2}" y="${height - 12}" fill="#c5bddb" font-size="13" text-anchor="middle">
-    Days of the Month
+    Days of the Month (up to today)
   </text>
 </svg>
 `;
