@@ -8,7 +8,6 @@ on:
 
 permissions:
   contents: write
-  read:user
 
 jobs:
   generate:
