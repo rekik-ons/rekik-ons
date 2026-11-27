@@ -126,11 +126,7 @@ export default onsRekik;
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Activity&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Activity"/>
 
 <div align="center">
-  <img
-    src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/main/assets/activity-graph.svg?v=2"
-    width="100%"
-    alt="Monthly GitHub Activity Graph"
-  />
+  <img src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/main/assets/activity-graph.svg" width="100%" alt="Monthly GitHub Activity Graph"/>
 </div>
 
 </div>
