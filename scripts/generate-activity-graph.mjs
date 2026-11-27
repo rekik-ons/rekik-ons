@@ -202,7 +202,7 @@ const xLabels = points.map(point => `
   <text
     x="${point.x}"
     y="${height - bottom + 25}"
-    fill="#c5bddb"
+    fill="#39d5ff"
     font-size="12"
     text-anchor="middle"
   >${point.day}</text>
@@ -305,7 +305,7 @@ const svg = `
     y1="${top}"
     x2="${left}"
     y2="${top + chartHeight}"
-    stroke="#c5bddb"
+    stroke="#39d5ff"
     stroke-width="1.5"
   />
 
