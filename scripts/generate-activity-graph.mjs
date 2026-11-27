@@ -8,16 +8,16 @@ if (!token) {
   throw new Error("GH_TOKEN is missing.");
 }
 
-// Current month (UTC)
+// Rolling window shaped like a month: the last day is always today (UTC)
+const windowDays = 30;
 const now = new Date();
-const year = now.getUTCFullYear();
-const month = now.getUTCMonth();
-const today = now.getUTCDate();
-const dayCount = new Date(Date.UTC(year, month + 1, 0)).getUTCDate();
+const todayStart = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+const DAY_MS = 24 * 60 * 60 * 1000;
+const windowStart = todayStart - (windowDays - 1) * DAY_MS;
 
-// Ask GitHub for exactly the current month (default range is "last year")
-const from = new Date(Date.UTC(year, month, 1)).toISOString();
-const to = new Date(Date.UTC(year, month + 1, 0, 23, 59, 59)).toISOString();
+// Ask GitHub for exactly this window
+const from = new Date(windowStart).toISOString();
+const to = now.toISOString();
 
 const query = `
 query($login: String!, $from: DateTime!, $to: DateTime!) {
@@ -73,14 +73,13 @@ const contributionsByDate = new Map(
   days.map(day => [day.date, day.contributionCount])
 );
 
-// Daily data: only up to today, so future days don't drop to zero
-const dailyData = Array.from({ length: today }, (_, i) => {
-  const date = new Date(Date.UTC(year, month, i + 1))
-    .toISOString()
-    .slice(0, 10);
+// Daily data: from (today - 29 days) to today
+const dailyData = Array.from({ length: windowDays }, (_, i) => {
+  const d = new Date(windowStart + i * DAY_MS);
+  const date = d.toISOString().slice(0, 10);
 
   return {
-    day: i + 1,
+    day: d.getUTCDate(),
     count: Math.max(0, contributionsByDate.get(date) ?? 0)
   };
 });
@@ -103,8 +102,8 @@ const maxContributions = Math.max(5, ...dailyData.map(d => d.count));
 const step = Math.max(1, Math.ceil(maxContributions / 5));
 const yMax = step * 5;
 
-// X axis runs from day 1 to today: the last day on the right is always today
-const xFor = dayIndex => left + (dayIndex / Math.max(1, today - 1)) * chartWidth;
+// X axis: 30 days, the last one on the right is always today
+const xFor = dayIndex => left + (dayIndex / (windowDays - 1)) * chartWidth;
 
 const points = dailyData.map((d, i) => ({
   x: xFor(i),
@@ -118,9 +117,9 @@ const grid = [];
 const yLabels = [];
 
 const gridStepY = chartHeight / 20;
-const gridStepX = chartWidth / Math.max(1, today - 1);
+const gridStepX = chartWidth / (windowDays - 1);
 
-for (let i = 0; i < today; i++) {
+for (let i = 0; i < windowDays; i++) {
   const x = left + i * gridStepX;
   grid.push(
     `<line x1="${x}" y1="${top}" x2="${x}" y2="${baseline}" stroke="#39334f" stroke-width="0.7" opacity="0.65"/>`
@@ -142,10 +141,11 @@ for (let value = 0; value <= yMax; value += step) {
   );
 }
 
-// X-axis labels: day 1 to today
-const xLabels = Array.from({ length: today }, (_, i) =>
-  `<text x="${xFor(i)}" y="${height - bottom + 25}" fill="#c5bddb" font-size="12" text-anchor="middle">${i + 1}</text>`
-).join("");
+// X-axis labels: real day-of-month numbers; the last one (today) is highlighted
+const xLabels = dailyData.map((d, i) => {
+  const isToday = i === windowDays - 1;
+  return `<text x="${xFor(i)}" y="${height - bottom + 25}" fill="${isToday ? "#39d5ff" : "#c5bddb"}" font-size="12" font-weight="${isToday ? 700 : 400}" text-anchor="middle">${d.day}</text>`;
+}).join("");
 
 // Smooth curve (cubic Bezier), with control points clamped to the chart area
 // so the curve never dips below the X-axis or above the top
@@ -252,7 +252,7 @@ const svg = `
   >Number of Contributions</text>
 
   <text x="${left + chartWidth / 2}" y="${height - 12}" fill="#c5bddb" font-size="13" text-anchor="middle">
-    Days of the Month (up to today)
+    Last 30 days (ending today)
   </text>
 </svg>
 `;
