@@ -1,0 +1,29 @@
+
+name: Update Monthly Activity Graph
+
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate activity graph
+        run: node scripts/generate-activity-graph.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: Commit updated graph
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update monthly GitHub activity graph"
+          file_pattern: assets/activity-graph.svg
