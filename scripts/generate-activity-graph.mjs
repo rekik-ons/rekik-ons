@@ -116,12 +116,30 @@ const points = dailyData.map((d, i) => ({
   count: d.count
 }));
 
-// Horizontal grid and Y-axis labels
+
+// Millimeter-paper grid (small squares)
 const horizontalGrid = [];
 
-for (let value = 0; value <= yMax; value += step) {
-  const y = top + chartHeight - (value / yMax) * chartHeight;
+const gridStepX = chartWidth / (dayCount - 1);
+const gridStepY = chartHeight / 20;
 
+// Vertical grid lines
+for (let x = left; x <= width - right + 0.1; x += gridStepX) {
+  horizontalGrid.push(`
+    <line
+      x1="${x}"
+      y1="${top}"
+      x2="${x}"
+      y2="${top + chartHeight}"
+      stroke="#39334f"
+      stroke-width="0.7"
+      opacity="0.55"
+    />
+  `);
+}
+
+// Horizontal grid lines
+for (let y = top; y <= top + chartHeight + 0.1; y += gridStepY) {
   horizontalGrid.push(`
     <line
       x1="${left}"
@@ -129,9 +147,17 @@ for (let value = 0; value <= yMax; value += step) {
       x2="${width - right}"
       y2="${y}"
       stroke="#39334f"
-      stroke-width="1"
+      stroke-width="0.7"
+      opacity="0.55"
     />
+  `);
+}
 
+// Y-axis labels
+for (let value = 0; value <= yMax; value += step) {
+  const y = top + chartHeight - (value / yMax) * chartHeight;
+
+  horizontalGrid.push(`
     <text
       x="${left - 15}"
       y="${y + 4}"
