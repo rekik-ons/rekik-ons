@@ -8,11 +8,12 @@ on:
 
 permissions:
   contents: write
+  read:user
 
 jobs:
   generate:
     runs-on: ubuntu-latest
- 
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,7 +21,7 @@ jobs:
       - name: Generate activity graph
         run: node scripts/generate-activity-graph.mjs
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit updated graph
         uses: stefanzweifel/git-auto-commit-action@v5
