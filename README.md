@@ -122,13 +122,17 @@ export default onsRekik;
   <img src="https://streak-stats.demolab.com/?user=rekik-ons&theme=tokyonight&background=0d1117&hide_border=true" alt="streak" />
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Activity&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Activity"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Activity&fontSize=20&fontColor=36BCF7&fontAlign=15&fontAlignY=52" width="100%" alt="Activity"/>
 
 <div align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rekik-ons&theme=tokyo-night&bg_color=0d1117&hide_border=true&area=true" alt="activity graph" />
+  <img
+    src="https://ghchart.rshah.org/0e75b6/rekik-ons"
+    alt="GitHub contribution graph"
+    width="100%"
+  />
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Contributions&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Contributions"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Contributions&fontSize=20&fontColor=36BCF7&fontAlign=15&fontAlignY=52" width="100%" alt="Contributions"/>
 
 <div align="center">
   <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg" />
