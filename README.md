@@ -1,4 +1,4 @@
-activity graph naffiche rien et contrubution est affiché ontributuion <!-- Banner (moon) -->
+ <!-- Banner (moon) -->
 <img src="./assets/moon-banner.svg" width="100%" alt="Ons Rekik banner"/>
 
 <!-- Self-hosted typing animation (file: assets/typing.svg) -->
