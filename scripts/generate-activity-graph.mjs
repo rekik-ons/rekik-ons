@@ -177,6 +177,11 @@ function createSmoothPath(pts) {
 
 const linePath = createSmoothPath(points);
 
+// Area under the curve: follow the curve, then close down to the X-axis
+const areaPath = points.length >= 2
+  ? `${linePath} L ${points[points.length - 1].x} ${baseline} L ${points[0].x} ${baseline} Z`
+  : "";
+
 // Vertical projection lines
 const projectionLines = points.map(p =>
   `<line x1="${p.x}" y1="${p.y}" x2="${p.x}" y2="${baseline}" stroke="#bd91ff" stroke-width="0.8" stroke-opacity="0.25" stroke-dasharray="3 4"/>`
@@ -205,9 +210,25 @@ const svg = `
     Ons' Contributions
   </text>
 
+  <defs>
+    <linearGradient id="areaFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="${curveColor}" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="${curveColor}" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
+
   ${grid.join("")}
+
+  <!-- Axes (drawn first so the curve sits on top of them) -->
+  <line x1="${left}" y1="${top}" x2="${left}" y2="${baseline}" stroke="${axisColor}" stroke-width="1.8"/>
+  <line x1="${left}" y1="${baseline}" x2="${width - right}" y2="${baseline}" stroke="${axisColor}" stroke-width="1.8"/>
+
+  <!-- Subtle colored area under the curve -->
+  <path d="${areaPath}" fill="url(#areaFill)" stroke="none"/>
+
   ${projectionLines}
 
+  <!-- Curve on top of the axes -->
   <path
     d="${linePath}"
     fill="none"
@@ -217,9 +238,6 @@ const svg = `
     stroke-linejoin="round"
   />
   ${dots}
-
-  <line x1="${left}" y1="${top}" x2="${left}" y2="${baseline}" stroke="${axisColor}" stroke-width="1.8"/>
-  <line x1="${left}" y1="${baseline}" x2="${width - right}" y2="${baseline}" stroke="${axisColor}" stroke-width="1.8"/>
 
   ${yLabels.join("")}
   ${xLabels}
