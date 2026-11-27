@@ -1,5 +1,4 @@
-
-<!-- Banner (moon) -->
+activity graph naffiche rien et contrubution est affiché ontributuion <!-- Banner (moon) -->
 <img src="./assets/moon-banner.svg" width="100%" alt="Ons Rekik banner"/>
 
 <!-- Self-hosted typing animation (file: assets/typing.svg) -->
@@ -110,6 +109,8 @@ export default onsRekik;
 
 </div>
 
+
+
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=GitHub%20Statistics&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="GitHub Statistics"/>
 
 <div align="center">
@@ -124,21 +125,13 @@ export default onsRekik;
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Activity&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Activity"/>
 
 <div align="center">
-  <img
-    src="https://github-act-graph.rodriaum.com/graph?username=rekik-ons&theme=github-dark&bg_color=0d1117&color=36BCF7&line=A78BFA&point=F472B6&area=true&hide_border=true"
-    alt="GitHub Activity Graph"
-    width="100%"
-  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=rekik-ons&theme=tokyo-night&bg_color=0d1117&hide_border=true&area=true" alt="activity graph" />
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Contribution%20Snake&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Contribution Snake"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Contributions&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Contributions"/>
 
 <div align="center">
-  <img
-    alt="GitHub contribution snake"
-    src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg"
-    width="100%"
-  />
+  <img alt="snake" src="https://raw.githubusercontent.com/rekik-ons/rekik-ons/output/github-snake.svg" />
 </div>
 
 <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1e1b4b&height=44&section=header&text=Let%27s%20talk&fontSize=20&fontColor=36BCF7&fontAlign=6&fontAlignY=52" width="100%" alt="Let's talk"/>
