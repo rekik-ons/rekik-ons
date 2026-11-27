@@ -141,11 +141,10 @@ for (let value = 0; value <= yMax; value += step) {
   );
 }
 
-// X-axis labels: real day-of-month numbers; the last one (today) is highlighted
-const xLabels = dailyData.map((d, i) => {
-  const isToday = i === windowDays - 1;
-  return `<text x="${xFor(i)}" y="${height - bottom + 25}" fill="${isToday ? "#39d5ff" : "#c5bddb"}" font-size="12" font-weight="${isToday ? 700 : 400}" text-anchor="middle">${d.day}</text>`;
-}).join("");
+// X-axis labels: real day-of-month numbers, all in the same style
+const xLabels = dailyData.map((d, i) =>
+  `<text x="${xFor(i)}" y="${height - bottom + 25}" fill="#c5bddb" font-size="12" text-anchor="middle">${d.day}</text>`
+).join("");
 
 // Smooth curve (cubic Bezier), with control points clamped to the chart area
 // so the curve never dips below the X-axis or above the top
