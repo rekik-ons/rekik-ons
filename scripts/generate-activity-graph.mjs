@@ -1,10 +1,7 @@
 
 import fs from "node:fs";
 
-// ==========================================
-// 1. GITHUB CONFIGURATION
-// ==========================================
-
+// GitHub configuration
 const token = process.env.GH_TOKEN;
 const username = "rekik-ons";
 
@@ -12,10 +9,7 @@ if (!token) {
   throw new Error("GH_TOKEN is missing.");
 }
 
-// ==========================================
-// 2. FETCH GITHUB CONTRIBUTIONS
-// ==========================================
-
+// Fetch GitHub contribution calendar
 const query = `
 query {
   user(login: "${username}") {
@@ -58,14 +52,12 @@ if (!user) {
   throw new Error("GitHub user not found.");
 }
 
-// ==========================================
-// 3. PREPARE DAILY CONTRIBUTION DATA
-// ==========================================
-
+// Get contribution data
 const days = user.contributionsCollection
   .contributionCalendar.weeks
   .flatMap(week => week.contributionDays);
 
+// Current month
 const now = new Date();
 const year = now.getUTCFullYear();
 const month = now.getUTCMonth();
@@ -74,10 +66,12 @@ const dayCount = new Date(
   Date.UTC(year, month + 1, 0)
 ).getUTCDate();
 
+// Map contributions by date
 const contributionsByDate = new Map(
   days.map(day => [day.date, day.contributionCount])
 );
 
+// Daily data
 const dailyData = Array.from({ length: dayCount }, (_, i) => {
   const date = new Date(Date.UTC(year, month, i + 1))
     .toISOString()
@@ -85,14 +79,11 @@ const dailyData = Array.from({ length: dayCount }, (_, i) => {
 
   return {
     day: i + 1,
-    count: contributionsByDate.get(date) ?? 0
+    count: Math.max(0, contributionsByDate.get(date) ?? 0)
   };
 });
 
-// ==========================================
-// 4. SVG DIMENSIONS
-// ==========================================
-
+// SVG dimensions
 const width = 1200;
 const height = 460;
 
@@ -104,10 +95,7 @@ const bottom = 80;
 const chartWidth = width - left - right;
 const chartHeight = height - top - bottom;
 
-// ==========================================
-// 5. Y-AXIS SCALE
-// ==========================================
-
+// Y-axis scale: always starts at zero
 const maxContributions = Math.max(
   5,
   ...dailyData.map(d => d.count)
@@ -120,25 +108,24 @@ const step = Math.max(
 
 const yMax = step * 5;
 
-// ==========================================
-// 6. CALCULATE GRAPH POINTS
-// ==========================================
-
+// Calculate graph coordinates
 const points = dailyData.map((d, i) => ({
   x: left + (i / Math.max(1, dayCount - 1)) * chartWidth,
-  y: top + chartHeight - (d.count / yMax) * chartHeight,
+
+  // Zero is exactly on the X-axis; never below it
+  y: top + chartHeight -
+    (d.count / yMax) * chartHeight,
+
   day: d.day,
   count: d.count
 }));
 
-// ==========================================
-// 7. MILLIMETER-PAPER GRID
-// ==========================================
-
+// Millimeter-paper grid
 const horizontalGrid = [];
+const yLabels = [];
 
-const gridStepX = chartWidth / (dayCount - 1);
 const gridStepY = chartHeight / 20;
+const gridStepX = chartWidth / (dayCount - 1);
 
 // Vertical grid lines
 for (let i = 0; i < dayCount; i++) {
@@ -151,7 +138,7 @@ for (let i = 0; i < dayCount; i++) {
       x2="${x}"
       y2="${top + chartHeight}"
       stroke="#39334f"
-      stroke-width="0.8"
+      stroke-width="0.7"
       opacity="0.65"
     />
   `);
@@ -168,20 +155,16 @@ for (let i = 0; i <= 20; i++) {
       x2="${width - right}"
       y2="${y}"
       stroke="#39334f"
-      stroke-width="0.8"
+      stroke-width="0.7"
       opacity="0.65"
     />
   `);
 }
 
-// ==========================================
-// 8. Y-AXIS LABELS
-// ==========================================
-
-const yLabels = [];
-
+// Y-axis labels: 0, 5, 10, ...
 for (let value = 0; value <= yMax; value += step) {
-  const y = top + chartHeight - (value / yMax) * chartHeight;
+  const y = top + chartHeight -
+    (value / yMax) * chartHeight;
 
   yLabels.push(`
     <text
@@ -194,24 +177,18 @@ for (let value = 0; value <= yMax; value += step) {
   `);
 }
 
-// ==========================================
-// 9. X-AXIS LABELS (ALL DAYS)
-// ==========================================
-
+// X-axis labels: every day of the month
 const xLabels = points.map(point => `
   <text
     x="${point.x}"
     y="${height - bottom + 25}"
-    fill="#39d5ff"
+    fill="#c5bddb"
     font-size="12"
     text-anchor="middle"
   >${point.day}</text>
 `).join("");
 
-// ==========================================
-// 10. SMOOTH ROUNDED CURVE
-// ==========================================
-
+// Smooth rounded curve using cubic Bezier
 function createSmoothPath(points) {
   if (points.length < 2) return "";
 
@@ -243,10 +220,7 @@ function createSmoothPath(points) {
 
 const linePath = createSmoothPath(points);
 
-// ==========================================
-// 11. VERTICAL PROJECTION LINES
-// ==========================================
-
+// Vertical projection lines
 const projectionLines = points.map(point => `
   <line
     x1="${point.x}"
@@ -260,11 +234,11 @@ const projectionLines = points.map(point => `
   />
 `).join("");
 
-// ==========================================
-// 12. FINAL SVG
-// ==========================================
+// Colors
+const axisColor = "#39d5ff";
+const curveColor = "#bd91ff";
 
-
+// Final SVG
 const svg = `
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -278,6 +252,7 @@ const svg = `
     width="${width}"
     height="${height}"
     rx="20"
+    ry="20"
     fill="#151321"
   />
 
@@ -299,41 +274,41 @@ const svg = `
   <!-- Vertical projections -->
   ${projectionLines}
 
-  <!-- Y-axis line -->
+  <!-- Smooth contribution curve -->
+  <path
+    d="${linePath}"
+    fill="none"
+    stroke="${curveColor}"
+    stroke-width="3.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Y-axis: blue -->
   <line
     x1="${left}"
     y1="${top}"
     x2="${left}"
     y2="${top + chartHeight}"
-    stroke="#39d5ff"
-    stroke-width="1.5"
+    stroke="${axisColor}"
+    stroke-width="1.8"
   />
 
-  <!-- X-axis line -->
+  <!-- X-axis: blue -->
   <line
     x1="${left}"
     y1="${top + chartHeight}"
     x2="${width - right}"
     y2="${top + chartHeight}"
-    stroke="#c5bddb"
-    stroke-width="1.5"
+    stroke="${axisColor}"
+    stroke-width="1.8"
   />
 
   <!-- Y-axis labels -->
   ${yLabels.join("")}
 
-  <!-- X-axis labels: all days -->
+  <!-- X-axis labels -->
   ${xLabels}
-
-  <!-- Smooth curve -->
-  <path
-    d="${linePath}"
-    fill="none"
-    stroke="#bd91ff"
-    stroke-width="3.5"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  />
 
   <!-- Y-axis title -->
   <text
@@ -360,20 +335,6 @@ const svg = `
 
 </svg>
 `;
-
-fs.mkdirSync("assets", { recursive: true });
-
-fs.writeFileSync(
-  "assets/activity-graph.svg",
-  svg.trim() + "\n"
-);
-
-console.log("Monthly activity graph generated successfully!");
-
-
-// ==========================================
-// 13. SAVE SVG
-// ==========================================
 
 fs.mkdirSync("assets", { recursive: true });
 
