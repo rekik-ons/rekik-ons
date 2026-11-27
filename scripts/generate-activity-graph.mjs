@@ -264,6 +264,7 @@ const projectionLines = points.map(point => `
 // 12. FINAL SVG
 // ==========================================
 
+
 const svg = `
 <svg
   xmlns="http://www.w3.org/2000/svg"
@@ -277,7 +278,6 @@ const svg = `
     width="${width}"
     height="${height}"
     rx="20"
-    ry="20"
     fill="#151321"
   />
 
@@ -296,13 +296,36 @@ const svg = `
   <!-- Millimeter grid -->
   ${horizontalGrid.join("")}
 
-  <!-- Y-axis numbers -->
-  ${yLabels.join("")}
-
-  <!-- Vertical projection lines -->
+  <!-- Vertical projections -->
   ${projectionLines}
 
-  <!-- Smooth contribution curve -->
+  <!-- Y-axis line -->
+  <line
+    x1="${left}"
+    y1="${top}"
+    x2="${left}"
+    y2="${top + chartHeight}"
+    stroke="#c5bddb"
+    stroke-width="1.5"
+  />
+
+  <!-- X-axis line -->
+  <line
+    x1="${left}"
+    y1="${top + chartHeight}"
+    x2="${width - right}"
+    y2="${top + chartHeight}"
+    stroke="#c5bddb"
+    stroke-width="1.5"
+  />
+
+  <!-- Y-axis labels -->
+  ${yLabels.join("")}
+
+  <!-- X-axis labels: all days -->
+  ${xLabels}
+
+  <!-- Smooth curve -->
   <path
     d="${linePath}"
     fill="none"
@@ -311,9 +334,6 @@ const svg = `
     stroke-linecap="round"
     stroke-linejoin="round"
   />
-
-  <!-- Days of the month -->
-  ${xLabels}
 
   <!-- Y-axis title -->
   <text
@@ -340,6 +360,16 @@ const svg = `
 
 </svg>
 `;
+
+fs.mkdirSync("assets", { recursive: true });
+
+fs.writeFileSync(
+  "assets/activity-graph.svg",
+  svg.trim() + "\n"
+);
+
+console.log("Monthly activity graph generated successfully!");
+
 
 // ==========================================
 // 13. SAVE SVG
